@@ -18,10 +18,11 @@ export default function Todo({ todo, onUpdate, onDelete }) {
             <input 
                 className={styles.checkbox}
                 type="checkbox" 
+                id={`checkbox${todo.id}`}
                 checked={status === 'completed'} 
                 onChange={handleChange}
             />
-            <label className={styles.text}>{text}</label>
+            <label className={styles.text} htmlFor={`checkbox${todo.id}`}>{text}</label>
             <span className={styles.icon}>
                 <button onClick={handleDelete} className={styles.button}><FaTrashCan /></button>
             </span>
